@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-blue-50 to-indigo-50 min-h-screen;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/20;
+  }
+  
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 
+           text-white rounded-xl font-medium shadow-lg shadow-blue-500/30 
+           hover:shadow-blue-500/40 hover:scale-[1.02] 
+           disabled:from-gray-400 disabled:to-gray-500 disabled:shadow-none disabled:hover:scale-100
+           transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/50 backdrop-blur-sm border border-gray-200 
+           rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 
+           transition-all duration-200;
+  }
+
+  .voice-card {
+    @apply p-5 card hover:shadow-2xl hover:scale-[1.02] transition-all duration-200 cursor-pointer;
+  }
+
+  .voice-card.selected {
+    @apply ring-2 ring-blue-500 shadow-2xl scale-[1.02];
+  }
+}
